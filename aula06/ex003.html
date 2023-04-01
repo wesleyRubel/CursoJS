@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa em JavaScript</title>
+    <style>
+        body{
+            background-color: rgb(88, 88, 161);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição</p>  
+    <script>
+       var num1=Number(window.prompt('Digite o 1º número'));
+       var num2=Number(window.prompt('Digite o 2º número'));
+       var soma=num1+num2;
+       window.alert(`A soma entre ${num1} + ${num2} é igual a ${soma}`);
+       var num3=String(num1);
+       var num4=String(num2);
+       var soma2=num3+num4;
+       window.alert(`A concactenação entre ${num3} e ${num4} é ${soma2}`);
+    </script>   
+</body>
+</html>
