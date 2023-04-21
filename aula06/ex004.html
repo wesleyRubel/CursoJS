@@ -16,9 +16,11 @@
 <body>
     <script>
         var nome=prompt('Digite seu nome');
+        var sal=Number(window.prompt('Digite seu salário'));
         document.write(`Olá, <strong>${nome}</strong>. Seu nome tem ${nome.length} letras <br>`);
         document.write(`Seu nome com letras maiúsculas é <strong>${nome.toUpperCase()}</strong> <br>`);
-        document.write(`Seu nome com letras minúsculas é <strong>${nome.toLowerCase()}`);
+        document.write(`Seu nome com letras minúsculas é <strong>${nome.toLowerCase()}<br>`);
+        document.write(`${nome} seu salário é de ${sal.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}`);
     </script>    
 </body>
 </html>
