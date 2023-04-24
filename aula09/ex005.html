@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        body{
+            background-color: rgb(46, 116, 207);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        #msg2{
+            text-align: center;
+            font-size: 2em;
+            margin: 20px;
+            background-color: black;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Primeiros passos com o DOM</h1>    
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">clique em mim</div>
+    <div id="msg2">Aprendendo a manipular HTML com o DOM</div>
+    <script>
+        var corpo=window.document.body;
+        /*Variável recebe o conteúdo do 2º parágrafo*/
+        var p1=window.document.getElementsByTagName('p')[0];
+        /*var d=document.getElementById('msg');
+        d.style.fontWeight="bold";
+        d.style.backgroundColor="red";
+        d.style.color="yellow";
+        d.style.padding="10px 0px 10px 0px";
+        d.innerText='Estou aguardando...' */ 
+        var d=document.querySelector('div#msg');
+        var e=document.getElementById('msg2');
+        d.innerText='Estou aguardando';
+        d.style.backgroundColor="red";
+        d.style.fontWeight="bold";
+        d.style.padding="10px";
+        e.style.display="block";
+    </script>
+</body>
+</html>
