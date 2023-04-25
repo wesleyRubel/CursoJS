@@ -1,51 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introdução ao DOM</title>
     <style>
-        body{
-            background-color: rgb(46, 116, 207);
+        body {
+            background-color: rgb(66, 101, 216);
             color: white;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 18px;
         }
-
-        #msg2{
-            text-align: center;
-            font-size: 2em;
-            margin: 20px;
-            background-color: black;
-            padding: 10px;
-            display: none;
-        }
     </style>
 </head>
+
 <body>
-    <h1>Primeiros passos com o DOM</h1>    
+    <h1>Iniciando estudos DOM</h1>
     <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
-    <div id="msg">clique em mim</div>
-    <div id="msg2">Aprendendo a manipular HTML com o DOM</div>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div class="msg">Clique em mim</div>
     <script>
+        //Selecionando o body
         var corpo=window.document.body;
-        /*Variável recebe o conteúdo do 2º parágrafo*/
-        var p1=window.document.getElementsByTagName('p')[0];
-        /*var d=document.getElementById('msg');
-        d.style.fontWeight="bold";
-        d.style.backgroundColor="red";
-        d.style.color="yellow";
-        d.style.padding="10px 0px 10px 0px";
-        d.innerText='Estou aguardando...' */ 
-        var d=document.querySelector('div#msg');
-        var e=document.getElementById('msg2');
-        d.innerText='Estou aguardando';
-        d.style.backgroundColor="red";
-        d.style.fontWeight="bold";
+        //Selecionando elementos por tag name
+        var p1 = window.document.getElementsByTagName('p')[1]; //Primeiro parágrafo
+        //Selecionando elementos po id
+        // var d=window.document.getElementById('msg');
+        //var d=document.getElementsByName('msg')[0];
+        //var d=window.document.getElementsByClassName('msg')[0];
+        var d=window.document.querySelectorAll('div.msg')[0];
+        //Exibindo o conteúdo da tag que foi selecionada
+        /* window.document.write('Esta escrito assim: '+ p1.innerHTML);*/
+        //Modificando o estilo da tag selecionada
+        p1.style.color = "yellow";
+        p1.style.backgroundColor="red";
+        p1.style.padding="10px";
+        //Alterando o estilo do body
+        corpo.style.backgroundColor="black";
+        d.style.backgroundColor="green";
         d.style.padding="10px";
-        e.style.display="block";
+        d.innerText="Estou aguardando...";
     </script>
 </body>
+
 </html>
