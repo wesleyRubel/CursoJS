@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #13aa13;
+            color: white;
+            font-weight: bold;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Interajaaaa... 
+    </div>  
+    <script>
+        var area=document.getElementById('area');
+        /*Adicionamos um ouvinte para o evento onclick. Quando esse evento for disparado, chmará a função clicar() */
+        area.addEventListener('click',clicar);
+        area.addEventListener('mouseenter',entrar);
+        area.addEventListener('mouseout',sair);
+        function clicar(){
+            area.innerText='Você clicou!';
+        }
+
+        function entrar(){
+            area.style.fontSize="20px";
+            area.style.backgroundColor="blue";
+        }
+
+        function sair(){
+            area.style.fontSize="16px";
+            area.style.backgroundColor="#13aa13";
+            area.innerText='Interajaaaa...';
+        }
+    </script>  
+</body>
+</html>
