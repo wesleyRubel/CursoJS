@@ -5,25 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Somando Números</title>
+    
 </head>
 <body>
-    <h1>Somando valores</h1> 
+    <h1>Somando valores</h1>
     <input type="number" name="numero1" id="inNumero1"> +
-    <input type="number" name="numero2" id="inNumero2">  
-    <input type="button" value="Somar" id="btSomar">
-    <p id="outSoma"></p>
+    <input type="number" name="numero2" id="inNumero2">
+    <input type="button" value="Somar" id="btSomar"> <br>
+    <p id="outSoma">
+
+    </p>
     <script>
         function somar(){
-            var n1=document.getElementById('inNumero1');
-            var n2=document.getElementById('inNumero2');
-            var numero1=Number(n1.value);
-            var numero2=Number(n2.value);
-            var soma=numero1+numero2;
-            window.document.getElementById('outSoma').innerText=`A soma entre ${numero1} e ${numero2} é = ${soma}`;
+            var num1=document.getElementById('inNumero1');
+            var num2=document.querySelector('input#inNumero2');
+            var n1=Number(num1.value);
+            var n2=Number(num2.value);
+            var soma=n1+n2;
+            document.querySelector('p#outSoma').innerHTML=`O resultado da soma entre ${n1} e ${n2} é = <strong>${soma}</strong>`;
         }
 
-        var btn=document.getElementById('btSomar');
-        btn.addEventListener('click',somar);
+        var bt=document.getElementById('btSomar');
+        bt.addEventListener('click',somar);
     </script>
 </body>
 </html>
