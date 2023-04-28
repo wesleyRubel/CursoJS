@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: black;
+        }
+
+        div#calculadora{
+            background-color: lightslategray;
+            max-width: 400px;
+            margin: auto;
+            padding: 10px;
+            position: relative;
+            top: 100px;
+        }
+
+        #calculadora h3{
+            margin: 20px 20px 5px 5px;
+        }
+
+        div#input{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        div#button{
+            margin-top: 20px;
+        }
+
+        #button > input{
+            width: 25px;
+            height: 25px;
+            padding: 5px;
+            font-weight: bold;
+        }
+
+        div#outRes{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculadora">
+        <h3>Protótipo de calculadora</h3>
+        <hr>
+        <div id="input">
+            <input type="number" name="numero1" id="inNum1">
+            <span id="outSinal"></span>
+            <input type="number" name="numero2" id="inNum2"> <br>
+        </div>
+        <p>Escolha uma operação:</p>
+        <div id="button">
+            <input type="button" value="+" id="btSomar">
+            <input type="button" value="-" id="btSubtrair">
+            <input type="button" value="X" id="btMultiplicar">
+            <input type="button" value="/" id="btDividir">
+        </div>
+        <div id="outRes">
+
+        </div>
+    </div>  
+    <script>
+        function somar(){
+            var num1=document.getElementById('inNum1');
+            var num2=document.querySelector('input#inNum2');
+            var n1=Number(num1.value);
+            var n2=Number(num2.value);
+            var soma=n1+n2;
+            document.getElementById('outSinal').innerText="+";
+            document.getElementById('outRes').innerHTML='Resultado: '+soma;
+        }
+
+        function subtrair(){
+            var num1=document.getElementById('inNum1');
+            var num2=document.querySelector('input#inNum2');
+            var n1=Number(num1.value);
+            var n2=Number(num2.value);
+            var subtracao=n1-n2;
+            document.getElementById('outSinal').innerText="-";
+            document.getElementById('outRes').innerHTML='Resultado: '+subtracao;
+        }
+
+        function multiplicar(){
+            var num1=document.getElementById('inNum1');
+            var num2=document.querySelector('input#inNum2');
+            var n1=Number(num1.value);
+            var n2=Number(num2.value);
+            var produto=n1*n2;
+            document.getElementById('outSinal').innerText="X";
+            document.getElementById('outRes').innerHTML='Resultado: '+produto;
+        }
+
+        function dividir(){
+            var num1=document.getElementById('inNum1');
+            var num2=document.querySelector('input#inNum2');
+            var n1=Number(num1.value);
+            var n2=Number(num2.value);
+            var quociente=n1/n2;
+            document.getElementById('outSinal').innerText="/";
+            document.getElementById('outRes').innerHTML='Resultado: '+quociente;
+        }
+        var btDivisao=document.querySelector('input#btDividir');
+        btDivisao.addEventListener('click',dividir);
+        var btProduto=document.querySelector('input#btMultiplicar');
+        btProduto.addEventListener('click',multiplicar);
+        var btSubtracao=document.querySelector('input#btSubtrair');
+        btSubtracao.addEventListener('click',subtrair);
+        var btSoma=document.getElementById('btSomar');
+        btSoma.addEventListener('click',somar);
+    </script>  
+</body>
+</html>
