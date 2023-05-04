@@ -71,6 +71,7 @@
             padding: 10px;
             margin: auto;
             margin-top: 40px;
+            margin-bottom: 40px;
         }
 
         footer > p{
@@ -86,14 +87,14 @@
     </header> 
     <section>
         <div class="inputs">
-            <label for="inAno">Ano de nascimento:</label>
+            <label for="inAno" id="inputsA">Ano de nascimento:</label>
             <input type="number" name="ano" id="inAno">
         </div>
         <div class="inputs">
-            Sexo:
-            <input type="radio" name="sexo" id="masc">
+            <span id="inputsS">Sexo:</span>
+            <input type="radio" name="sexo" id="masc" value="masculino">
             <label for="masc">Homem</label>
-            <input type="radio" name="sexo" id="fem">
+            <input type="radio" name="sexo" id="fem" value="feminino">
             <label for="fem">Mulher</label>
         </div>
         <input type="button" value="Verificar" id="btVerificar">
