@@ -13,15 +13,30 @@ function verificar(){
         var idade=ano-Number(fAno.value);
         //res.innerHTML=`Idade calculada = ${idade}`;
         var genero='';
-        var img=window.document.getElementById('foto');
+        var img=window.document.createElement('img'); //Criando um elemento HTML
+        img.setAttribute('id','foto'); //Criando um id para o elemento img
         if(fsex[0].checked){
             genero='Homem';
-            res.innerHTML=`Detectamos ${genero} com ${idade} anos`;
-            img.innerHTML='<img src="imagens/homemAdulto.png" alt="Homem Adulto">';
+            if(idade>=0 && idade<=10){
+                //Criança
+            }else if(idade<21){
+                //Jovem
+            }else if(idade<50){
+                //Adulto
+            }else{
+                //Idoso
+            }
         }else if(fsex[1].checked){
             genero='Mulher';
-            res.innerHTML=`Detectamos ${genero} com ${idade} anos`;
-            img.innerHTML='<img src="imagens/mulherJovem.png" alt="Mulher Jovem">';
+            if(idade>=0 && idade<=10){
+                //Criança
+            }else if(idade<21){
+                //Jovem
+            }else if(idade<50){
+                //Adulto
+            }else{
+                //Idoso
+            }
         }else{
             window.alert('[ERRO] Verifique os dados e tente novamente');
             window.document.getElementById('outSexo').style.borderWidth="0px 0px 1px 0px";
