@@ -20,6 +20,26 @@ section{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.253);
 }
 
+section > div{
+    padding: 10px;
+    margin: 10px;
+}
+
+section > #btVerificar{
+    padding: 5px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+section > #outMsg{
+    text-align: center;
+}
+
+section > #foto{
+    text-align: center;
+    display: none;
+}
+
 footer{
     text-align: center;
     color: white;
