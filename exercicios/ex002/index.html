@@ -4,82 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercício 002</title>
-    <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-        }
-
-        html,body{
-            width: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body{
-            background-color: #233eff;
-        }
-
-        header{
-            max-width: 600px;
-            margin: auto;
-            margin-top: 40px;
-        }
-
-        header > h1{
-            text-align: center;
-            color: white;
-        }
-
-        section{
-            max-width: 600px;
-            margin: auto;
-            margin-top: 40px;
-            padding: 15px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.384);
-        }
-
-        section > div.inputs{
-            margin: 20px;
-        }
-
-        section > input#btVerificar{
-            margin: 20px;
-            padding: 10px;
-            font-weight: bold;
-        }
-
-        section > p#outMsg{
-            margin: 20px;
-        }
-
-        section > div#outImage{
-            width: 200px;
-            height: 200px;
-            margin: auto;
-            margin-bottom: 20px;
-            /*background: url(./imagens/homemIdoso-200.jpeg) center center no-repeat;
-            background-size: cover;*/
-            border-radius: 50%;
-            display: none;
-        }
-
-        footer{
-            max-width: 600px;
-            padding: 10px;
-            margin: auto;
-            margin-top: 40px;
-            margin-bottom: 40px;
-        }
-
-        footer > p{
-            text-align: center;
-            color: white;
-            font-weight: bold;
-        }
-    </style>
+    <title>Verificador de Idade</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -87,17 +13,17 @@
     </header> 
     <section>
         <div class="inputs">
-            <label for="inAno" id="inputsA">Ano de nascimento:</label>
+            <label for="inAno" id="labelAno">Ano de nascimento:</label>
             <input type="number" name="ano" id="inAno">
         </div>
         <div class="inputs">
-            <span id="inputsS">Sexo:</span>
-            <input type="radio" name="sexo" id="masc" value="masculino">
+            <span id="spanSexo">Sexo:</span>
+            <input type="radio" name="sexo" id="masc">
             <label for="masc">Homem</label>
-            <input type="radio" name="sexo" id="fem" value="feminino">
+            <input type="radio" name="sexo" id="fem">
             <label for="fem">Mulher</label>
         </div>
-        <input type="button" value="Verificar" id="btVerificar">
+        <input type="button" value="Verificar" id="btVerificar" onclick="verificar()">
         <p id="outMsg">Preencha os dados acima para ver o resultado!</p>
         <div id="outImage">
 
