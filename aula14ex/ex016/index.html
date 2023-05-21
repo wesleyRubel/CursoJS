@@ -9,15 +9,25 @@
 </head>
 <body>
     <header>
-        <h1>Título</h1>
+        <h1>Vamos Contar</h1>
     </header>   
     <main>
         <div>
-            Entrada
+            <label for="iInicio">Início: </label>
+            <input type="number" name="numI" id="iInicio">
         </div>
         <div>
-            Saída
+            <label for="iFim">Fim: </label>
+            <input type="number" name="numF" id="iFim">
         </div>
+        <div>
+            <label for="iPasso">Passo: </label>
+            <input type="number" name="passo" id="iPasso">
+        </div>
+        <input type="button" value="Contar" id="btContar">
+        <p id="outSaida">
+
+        </p>
     </main> 
     <footer>
         <p>&copy; CursoemVideo</p>
