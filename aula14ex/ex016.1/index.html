@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de Exercício</title>
+    <title>Super Contador</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <h1>Título</h1>
-    </header>   
+        <h1>Vamos contar</h1>
+    </header>
     <main>
         <div>
-            Entrada
+            <label for="iInicio">Início: </label>
+            <input type="number" name="inicio" id="iInicio">
         </div>
         <div>
-            Saída
+            <label for="iFim">Fim: </label>
+            <input type="number" name="fim" id="iFim">
         </div>
-    </main> 
+        <div>
+            <label for="iPasso">Passo: </label>
+            <input type="number" name="passo" id="iPasso">
+        </div>
+        <input type="button" value="Contar" onclick="contar()">
+        <div id="res">
+            Preparando a contagem...
+        </div>
+    </main>
     <footer>
         <p>&copy; CursoemVideo</p>
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
