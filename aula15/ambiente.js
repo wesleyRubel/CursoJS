@@ -9,3 +9,5 @@ let n=num.length;
 console.log(`Nosso array tem ${n} elementos`);
 num.sort(); //Ordena os valores do vetor em ordem crescente
 console.log(`Vetor organizado ${num}`);
+let i=num.indexOf(1);
+console.log(i);
