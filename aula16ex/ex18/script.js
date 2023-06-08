@@ -27,6 +27,16 @@ function totalValores(){
     return valores.length;
 }
 
+function maiorValor(){
+    let maior=0;
+    for(pos in valores){
+        if(maior < valores[pos]){
+            maior=valores[pos];
+        }
+    }
+    return maior;
+}
+
 function finalizar(){
     let resultados=window.document.getElementById('res');
     resultados.style.display="block";
@@ -35,4 +45,9 @@ function finalizar(){
    /* let total=window.document.createElement('p');
     total.innerHTML=`Ao todo temos <strong>${qtd}</strong> números cadastrados`;
     resultados.appendChild(total);*/
+    window.document.getElementById('total').innerHTML=`Ao todo, temos <strong>${qtd}</strong> números cadastrados.`;
+
+    //Verificando o maior número digitado
+    let maior=maiorValor();
+    window.document.getElementById('maior').innerHTML=`O maior valor informado foi <strong>${maior}</strong>.`;
 }
