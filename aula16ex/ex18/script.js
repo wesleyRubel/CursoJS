@@ -18,7 +18,7 @@ function adicionar(){
         item.text=`Valor ${n} adicionado`;
         lNumeros.appendChild(item);
         window.document.getElementById('op').style.display="none";
-        window.document.getElementById('saida').style.display="none";
+        window.document.getElementById('res').style.display="none";
     }
 }
 
@@ -28,11 +28,11 @@ function totalValores(){
 }
 
 function finalizar(){
-    let resultados=window.document.getElementById('saida');
+    let resultados=window.document.getElementById('res');
     resultados.style.display="block";
     //Verificando quantos números foram adicionados
     let qtd=totalValores();
-    let total=window.document.createElement('p');
+   /* let total=window.document.createElement('p');
     total.innerHTML=`Ao todo temos <strong>${qtd}</strong> números cadastrados`;
-    resultados.appendChild(total);
+    resultados.appendChild(total);*/
 }
