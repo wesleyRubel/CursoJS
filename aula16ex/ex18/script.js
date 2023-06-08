@@ -26,7 +26,7 @@ function adicionar(){
 function totalValores(){
     return valores.length;
 }
-
+//Função que retorna o maior número informado
 function maiorValor(){
     let maior=0;
     for(pos in valores){
@@ -35,6 +35,31 @@ function maiorValor(){
         }
     }
     return maior;
+}
+//Função que retorna o menor número informado
+function menorValor(){
+    let menor=valores[0];
+    for(pos in valores){
+        if(valores[pos] < menor){
+            menor=valores[pos];
+        }
+    }
+    return menor;
+}
+//função que retorna a soma dos elementos informados
+function somarValores(){
+    let soma=0;
+    for(pos in valores){
+        soma+=valores[pos];
+    }
+    return soma;
+}
+//Função que retorna a média dos valores informados
+function calculaMedia(){
+    let media=0;
+    let s=somarValores();
+    media=s/valores.length;
+    return media;
 }
 
 function finalizar(){
@@ -50,4 +75,16 @@ function finalizar(){
     //Verificando o maior número digitado
     let maior=maiorValor();
     window.document.getElementById('maior').innerHTML=`O maior valor informado foi <strong>${maior}</strong>.`;
+
+    //Verificando o menor número digitado
+    let menor=menorValor();
+    window.document.getElementById('menor').innerHTML=`O menor valor informado foi <strong>${menor}</strong>.`;
+
+    //Retornando a soma dos valores informados
+    let soma=somarValores();
+    window.document.getElementById('soma').innerHTML=`Somando todos os valores, temos <strong>${soma}</strong>`;
+
+    //Retornando a média dos valores informados
+    let media=calculaMedia();
+    window.document.getElementById('media').innerHTML=`A média dos valores digitados é <strong>${media.toFixed(2)}</strong>.`;
 }
