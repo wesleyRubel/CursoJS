@@ -63,7 +63,8 @@ function calculaMedia(){
 }
 
 function finalizar(){
-    let resultados=window.document.getElementById('res');
+    if(valores.length != 0){
+        let resultados=window.document.getElementById('res');
     resultados.style.display="block";
     //Verificando quantos números foram adicionados
     let qtd=totalValores();
@@ -87,4 +88,8 @@ function finalizar(){
     //Retornando a média dos valores informados
     let media=calculaMedia();
     window.document.getElementById('media').innerHTML=`A média dos valores digitados é <strong>${media.toFixed(2)}</strong>.`;
+    }else{
+        window.alert('Não há valores a serem exibidos.');
+    }
+    
 }
