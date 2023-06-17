@@ -21,7 +21,10 @@
         document.write(`Seu nome com letras maiúsculas é <strong>${nome.toUpperCase()}</strong> <br>`);
         document.write(`Seu nome com letras minúsculas é <strong>${nome.toLowerCase()}<br>`);
         document.write(`${nome} seu salário é de ${sal.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}`);*/ 
-        
+        var nome = window.prompt('Qual é seu nome?: ');
+        window.document.write(`<p>Olá <strong>${nome}</strong>. Seu nome tem ${nome.length} letras</p>`);
+        window.document.write(`<p>Seu nome em letras maiúsculas é <strong>${nome.toUpperCase()}</strong></p>`);
+        window.document.write(`<p>Seu nome em letras minúsculas é <strong>${nome.toLowerCase()}</strong></p>`);
     </script>    
 </body>
 </html>
