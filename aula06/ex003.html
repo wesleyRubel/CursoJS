@@ -19,20 +19,18 @@
     <h1>Olá, mundo!</h1>
     <p>Já me livrei da maldição</p>
     <script>
-        //Convertendo de string para número
-        var n1 = Number(prompt('Digite um número'));
-        var n2 = Number(prompt('Digite outro número'));
+        //Convertendo uma string em number
+        var n1 = Number(window.prompt('Digite um número: '));
+        var n2 = Number(window.prompt('Digite outro número: '));
         var s = n1 + n2;
-        alert(`A soma entre ${n1} e ${n2} é = ${s}`);
-        //Convertendo de número para string
-        var n3=n1.toString();
-        var n4=n2.toString();
-        /*Alternativa de conversão
-        var n3=String(n1);
-        var n4=String(n2);
-        */ 
-        s=n3+n4;
-        window.alert(`A concatenação entre ${n3} e ${n4} é = ${s}`);
+        window.alert("A soma "+n1+" + "+n2+" = "+s); 
+        //Convertendo um number para string
+        /*var n3 = String(n1);
+        var n4 = String(n2);*/ 
+        var n3 = n1.toString();
+        var n4 = n2.toString();  
+        var c = n3 + n4;
+        window.alert("A concatenção "+n3+" + "+n4+" = "+c);
     </script>
 </body>
 
