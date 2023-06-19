@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        body{
+            background-color: rgb(68, 125, 199);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Iniciando os estudos em DOM</h1>  
+    <p>Aqui vai o resultado</p>  
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div class="msg">Clique em mim</div>
+    <script>
+        //Métodos de seleção de elementos no JavaScript
+        //getElementsByTagName
+        //Declara uma variável que irá receber um elemento de paragráfo do documento HTML. Assim representamos um elemento da página por meio de uma variável no JavaScript. E isso somente é possível graças ao DOM
+        var p1 = window.document.getElementsByTagName('p')[1];
+        var corpo = window.document.body;
+        //var d = window.document.getElementById('msg');
+        //var d = window.document.getElementsByName('msg')[0];
+        //var d = window.document.getElementsByClassName('msg')[0];
+        var d = window.document.querySelector('div.msg');
+        d.style.backgroundColor="green";
+        d.style.maxWidth="400px";
+        d.style.margin="auto";
+        d.style.textAlign="center";
+        d.style.padding="10px";
+        d.style.borderRadius="10px";
+        d.innerHTML='Modificando este elemento através do <strong>DOM</strong>';
+        /*corpo.style.backgroundColor="black";
+        p1.innerText='Acessando o DOM';
+        p1.style.color="blue";
+        p1.style.fontWeight="bold";
+        p1.style.fontSize="1.2em";*/ 
+    </script>
+</body>
+
+</html>
