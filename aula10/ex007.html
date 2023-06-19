@@ -9,20 +9,30 @@
 </head>
 <body>
     <h1>Somando valores</h1>
-    <input type="number" name="numero1" id="inNumero1"> +
-    <input type="number" name="numero2" id="inNumero2">
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
     <input type="button" value="Somar" id="btSomar"> <br>
     <p id="outSoma">
 
     </p>
     <script>
         function somar(){
-            var num1=document.getElementById('inNumero1');
-            var num2=document.querySelector('input#inNumero2');
-            var n1=Number(num1.value);
-            var n2=Number(num2.value);
-            var soma=n1+n2;
-            document.querySelector('p#outSoma').innerHTML=`O resultado da soma entre ${n1} e ${n2} é = <strong>${soma}</strong>`;
+            var num1 = window.document.getElementById('txtn1');
+            var num2 = window.document.getElementById('txtn2');
+            if(num1.value == '' || num2.value == ''){
+                window.alert("Por favor preencha os campos corretamente");
+                num1.value='';
+                num1.focus();
+                num2.value='';
+            }else{
+                var n1 = Number(num1.value);
+                var n2 = Number(num2.value);
+                var soma = n1+n2;
+                window.document.getElementById('outSoma').innerHTML=`A soma <strong>${n1} + ${n2} = ${soma}</strong>`;
+                num1.value='';
+                num1.focus();
+                num2.value='';
+            }    
         }
 
         var bt=document.getElementById('btSomar');
