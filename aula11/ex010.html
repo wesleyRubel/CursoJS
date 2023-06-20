@@ -9,36 +9,49 @@
         body{
             font-family: Arial, Helvetica, sans-serif;
         }
+
+        input[type=button]{
+            padding: 5px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <h1>Sistema de multas</h1>  
-    <label for="inVel">Velocidade em KM/h:</label>  
-    <input type="number" name="vel" id="inVel">
+    <h1>Sistema de Multas</h1>
+    <label for="vel">Velocidade em Km/h: </label>
+    <input type="text" id="vel">
     <input type="button" value="Verificar" id="btVerificar">
     <p id="res">
-         
-    </p>
-    <p id="outMulta">
 
     </p>
-
     <script>
+        var bt = window.document.querySelector('input#btVerificar');
+        bt.addEventListener('click',verificar);
         function verificar(){
-            var velocidade=window.document.getElementsByName('vel')[0];
-            if(velocidade.value!=''){
-                var vel=Number(velocidade.value);
-                var res=window.document.querySelector('p#res');
-                res.innerHTML=`Sua velocidade atual é de <strong>${vel}KM/h</strong>. `;
-                res.innerHTML+="<br> Dirija sempre com cinto de segurança." 
-                if(vel>60){
-                    window.document.getElementById('outMulta').innerHTML='Você ultrapassou o limite de velocidade. <strong>MULTADO</strong>';
+            var velocidade = window.document.getElementById('vel');
+            //Validando a entrada
+            if(!(velocidade.value == '')){
+                var vel = Number(velocidade.value);
+                //Validando os dados
+                if(isNaN(vel) || vel < 0){
+                    window.alert('Por favor digite um valor que seja válido');
+                    velocidade.value='';
+                    velocidade.focus();
+                }else{
+                    //window.alert('O valor informado esta correto');
+                    var res = window.document.getElementsByTagName('p')[0];
+                    if(vel <= 60){
+                        res.innerHTML=`Velocidade do veículo é de ${vel}Km/h <br> <strong>Dentro da velocidade permitida</strong>`;
+                    }else{
+                        res.innerHTML=`Velocidade do veículo é de ${vel}Km/h <br> <strong>MULTADO! A velocidade permitida foi excedida</strong>`;
+                    }
+                    velocidade.value='';
+                    velocidade.focus();
                 }
             }else{
-                window.alert('Digite um valor que seja válido');
+                window.alert('Por favor informe um valor válido');
             }
         }
-        window.document.getElementById('btVerificar').addEventListener('click',verificar);
     </script>
 </body>
 </html>
