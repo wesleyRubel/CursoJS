@@ -1,7 +1,7 @@
-var pais='EUA';
+var pais = 'EUA';
 console.log(`Vivendo em ${pais}`);
-if(pais=='Brasil'){ //Condição composta
-    console.log('Você é brasileiro');
+if(pais == 'Brasil'){
+    console.log("Você é brasileiro!");
 }else{
-    console.log('Você é estrangeiro');
+    console.log("Você é estrangeiro!");
 }
