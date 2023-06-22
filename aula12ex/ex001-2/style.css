@@ -5,8 +5,8 @@
     padding: 0px;
 }
 
-html,body{
-    width: 100vw;
+body{
+    width: 100%;
     background-color: rgb(81, 81, 255);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
