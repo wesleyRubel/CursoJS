@@ -15,6 +15,7 @@ body{
 header{
     text-align: center;
     color: white;
+    margin: 30px 0px;
 }
 
 section{
@@ -26,7 +27,22 @@ section{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.253);
 }
 
+section > div{
+    margin: 20px 10px;
+}
+
+section > input[type=button]{
+    margin: 20px 10px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+div#res{
+    text-align: center;
+}
+
 footer{
+    margin: 20px;
     text-align: center;
     color: white;
     font-style: italic;
