@@ -25,17 +25,13 @@ section > div{
     margin: 10px;
 }
 
-section > #btVerificar{
+section > input[type=button]{
     padding: 5px;
     font-weight: bold;
     margin: 10px;
 }
 
-section > #outMsg{
-    text-align: center;
-}
-
-section > #foto{
+section > #res{
     text-align: center;
 }
 

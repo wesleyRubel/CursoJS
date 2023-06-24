@@ -13,22 +13,19 @@
     </header>    
     <section>
         <div>
-            <label for="inAno" id="anoNasc">Ano de nascimento:</label>
-            <input type="number" name="Ano" id="inAno" min="1900" max="2023">
+            <label for="anoN">Ano de Nascimento: </label> 
+            <input type="number" name="anoN" id="anoN">
         </div>
         <div>
-            <span id="outSexo">Sexo:</span>
-            <input type="radio" name="sexo" id="m">
-            <label for="m">Homem</label>
-            <input type="radio" name="sexo" id="f">
-            <label for="f">Mulher</label>
+            <span>Sexo:</span>
+            <input type="radio" name="sex" id="homem">
+            <label for="homem">Homem</label>
+            <input type="radio" name="sex" id="mulher">
+            <label for="mulher">Mulher</label>
         </div>
-        <input type="button" value="Verificar" id="btVerificar">
-        <div id="outMsg">
+        <input type="button" value="Verificar" onclick="verificar()">
+        <div id="res">
             Preencha os dados acima para ver o resultado!
-        </div>
-        <div id="foto">
-
         </div>
     </section>
     <footer>
