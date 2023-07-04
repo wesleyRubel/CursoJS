@@ -1,9 +1,9 @@
-let f=function(n){
+let f = function(n){
     if(n%2 == 0){
-        return 'Par!';
+        return 'Par'
     }else{
-        return 'Ímpar!';
+        return 'Ímpar'
     }
 }
 
-console.log(`O número informado é ${f(10)}`);
+console.log(`O número é ${f(306)}`)
