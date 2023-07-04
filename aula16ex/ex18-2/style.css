@@ -31,6 +31,21 @@ main{
     box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.438);
 }
 
+div{
+    margin: 15px 10px;
+}
+
+div > input[type=button]{
+    padding: 5px;
+    font-weight: bold;
+}
+
+div > select{
+    display: block;
+    margin: 15px 0px;
+    padding: 5px;
+}
+
 footer{
     max-width: 700px;
     margin: auto;
