@@ -46,6 +46,10 @@ div > select{
     padding: 5px;
 }
 
+div#res > p{
+    margin: 16px 0px;
+}
+
 footer{
     max-width: 700px;
     margin: auto;
