@@ -1,9 +1,9 @@
-let fatorial=function(f){
-    let res=f;
-    for(let c=res-1;c>=1;c--){
-        res*=c;
+let fatorial = function(f=0){
+    let res = f
+    for(let c = f-1; c > 1;c--){
+        res *= c
     }
-    return res;
+    return res
 }
 
-console.log(`O fatorial é ${fatorial(7)}`);
+console.log(`Fatorial = ${fatorial(7)}`)
