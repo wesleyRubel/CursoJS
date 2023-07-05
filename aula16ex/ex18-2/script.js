@@ -1,4 +1,4 @@
-let numeros = [] //Array para receber os valores de entrada
+/*let numeros = [] //Array para receber os valores de entrada
 let n = 0
 //Função para validar e receber os valores
 function adicionar(){
@@ -101,11 +101,82 @@ function resultados(){
             Lnum.appendChild(op)
         }
     }
-}*/
+}
 
 let btAdicionar = window.document.querySelector('input#ad')
 btAdicionar.addEventListener('click',adicionar)
 let btFinalizar = window.document.querySelector('input#fn')
 btFinalizar.addEventListener('click',resultados)
-/*let btOrdenar = window.document.querySelector('input#od')
+let btOrdenar = window.document.querySelector('input#od')
 btOrdenar.addEventListener('click',ordenar)*/
+
+let num = window.document.querySelector('input#num')
+let Lnum = window.document.querySelector('select#Lnum')
+let res = window.document.querySelector('div#res')
+let valores = []
+
+function isNumero(n) {
+    if (n.length == 0 || Number(n) < 1 || Number(n) > 100) {
+        return false
+    } else {
+        return true
+    }
+}
+
+function isLista(n, l) {
+    if (l.indexOf(Number(n)) != -1) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function isArray(l){
+    if(l.length == 0){
+        return true
+    }else{
+        return false
+    }
+}
+
+function adicionar() {
+    if (isNumero(num.value) && !isLista(num.value, valores)) {
+        //alert('Tudo OK')
+        window.document.getElementById('op').style.display = "none"
+        valores.push(Number(num.value))
+        let item = window.document.createElement('option')
+        item.text = `Valor ${num.value} adicionado`
+        Lnum.appendChild(item)
+        res.innerHTML = ''
+    } else {
+        window.alert('Valor inválido ou já encontrado na lista')
+    }
+    num.value = ''
+    num.focus()
+}
+
+function finalizar(){
+    if(isArray(valores)){
+        window.alert('É necessário adicionar valores')
+        num.focus()
+    }else{
+        res.innerHTML = ''
+        let tot = valores.length
+        res.innerHTML += `<p>Ao todo temos, <strong>${tot}</strong> números cadastrados.</p>`
+        let maior = valores[0]
+        let menor = valores[0]
+        let soma = 0
+        for(let pos in valores){
+            soma += valores[pos]
+            if(valores[pos] > maior)
+                maior = valores[pos]
+            if(valores[pos] < menor)
+                menor = valores[pos]
+        }
+        let media = soma/tot
+        res.innerHTML += `<p>O maior valor adicionado foi <strong>${maior}</strong>.</p>`
+        res.innerHTML += `<p>O menor valor adicionado foi <strong>${menor}</strong>.</p>`
+        res.innerHTML += `<p>Somando todos os valores, temos <strong>${soma}</strong>.</p>`
+        res.innerHTML += `<p>A média dos valores digitados é <strong>${media.toFixed(2)}</strong>.</p>`
+    }    
+}
