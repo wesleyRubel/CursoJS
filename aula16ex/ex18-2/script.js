@@ -44,6 +44,18 @@ function menorNum(){
     return menor
 }
 
+function somaNum(){
+    let s = 0
+    for(let pos in numeros){
+        s += numeros[pos]
+    }
+    return s
+}
+
+function mediaNum(s){
+    return s/numeros.length
+}
+
 //Função para exibir os valores
 function resultados(){
     if(numeros.length == 0){
@@ -52,6 +64,8 @@ function resultados(){
     }else{
         let maior = maiorNum()
         let menor = menorNum()
+        let s = somaNum()
+        let m = mediaNum(s)
         let res = window.document.querySelector('div#res')
         res.innerHTML = ''
         let total = window.document.createElement('p')
@@ -63,10 +77,35 @@ function resultados(){
         let msgMenor = window.document.createElement('p')
         msgMenor.innerHTML = `O menor valor informado foi <strong>${menor}</strong>.`
         res.appendChild(msgMenor)
+        let soma = window.document.createElement('p') 
+        soma.innerHTML = `Somando todos os valores, temos <strong>${s}</strong>.`
+        res.appendChild(soma)
+        let media = window.document.createElement('p')
+        media.innerHTML = `A média dos valores digitados é <strong>${m.toFixed(2)}</strong>.`
+        res.appendChild(media)
     }
 }
+
+/*function ordenar(){
+    if(numeros.length == 0){
+        window.alert('Não existem números cadastrados')
+        window.document.getElementById('num').focus()
+    }else{
+        let Lnum = window.document.querySelector('select#Lnum')
+        Lnum.innerHTML = ''
+        numeros.sort(function(a,b){return a-b})
+        for(let pos in numeros){
+            let op = window.document.createElement('option')
+            op.value = `op${pos}`
+            op.innerText = `Valor ${numeros[pos]} adicionado`
+            Lnum.appendChild(op)
+        }
+    }
+}*/
 
 let btAdicionar = window.document.querySelector('input#ad')
 btAdicionar.addEventListener('click',adicionar)
 let btFinalizar = window.document.querySelector('input#fn')
 btFinalizar.addEventListener('click',resultados)
+/*let btOrdenar = window.document.querySelector('input#od')
+btOrdenar.addEventListener('click',ordenar)*/
